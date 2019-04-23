@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="utf-8">
+        <title>Aula 2</title>
+    </head>
+    <body>
+        <img src="../images/thor.jpeg" width="400px" height="400px" >
+
+        <form action="cadastrar.php" method="POST">
+            <fieldset>
+                <legend> Cadastro </legend>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="pass">
+
+            <label for="age">Idade:</label>
+            <input type="number" id="age" name="age">
+
+            <label for="date">Data de saída:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="color">Cor:</label>
+            <input type="color" id="color" name="cor">
+
+            <label for="check">Opção A:</label>
+            <input type="checkbox" id="check" name="check">
+
+            <label for="radio">Opção B:</label>
+            <input type="radio" id="radio" name="radio">
+
+            <select name ="state">
+                <option value ="1">Minas Gerais</option>
+                <option value ="2">São Paulo</option>
+                <option value ="3">Rio de Janeiro</option>
+                <option value ="4">Espirito Santo</option>
+            </select>
+
+            <input type="button" value="Botão 1">
+            <input type="submit" value="Salvar">
+            <input type="reset" value="Limpar">
+        </fieldset>
+        </form>
+    </body>
+</html>

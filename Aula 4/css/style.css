@@ -1,0 +1,45 @@
+body{
+    background-color:green;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px ;
+}
+
+p{
+    color:blue;
+    font-weight: bold;
+}
+
+div{
+    background-color:white;
+
+    /*
+    border-style:solid;
+    border-color:black;
+    border-width: 1px;
+
+    tem os mesmos efeitos
+    border: 1px solid black; tamanho, tipo e cor 
+    */
+
+    border: 1px solid black; /* tamanho, tipo e cor */
+    border-top-color: yellow;
+    border-top-width: 3px;
+    border-top-style: dashed;
+
+    margin: 20px;
+    margin-right: 1px;
+    margin-bottom: 100px; /* espaçamento de um para outro */
+
+    padding: 25px; /* aumenta tamanho */
+
+
+}
+
+input {
+    padding:5px;
+}

@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding: 0;
+}
+div {
+    height: 300px;
+    border: 1px dashed red;
+    /* background-image: url('../img/thor.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;  a linha 14 faz as mesma coisa que essas 3.*/
+
+
+    /* lightblue é caso a img nao carrega, ai carrega pelo menos a cor*/
+    background: lightblue url('../img/thor.jpeg') center no-repeat; 
+}
+
+li{
+    display: inline;
+}
+
+li a{
+    text-decoration: none;
+    background-color: lightgreen;
+}
+
+li ul {
+    display: none;
+}
+
+ul li:hover ul {  /* serve para fazer o efeito de passar o mouse e aparecer o submenu*/
+    display: inline;
+}
+
+input[type="text"]{
+    padding: 5px;
+}
+
+input[value="john@gmail.com"]{
+    padding: 15px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 95%;
+}
+
+td{
+    border: 1px solid black;
+}
+
+tr:nth-child(odd){
+    background-color: lightgray;  /* impares */
+}
+
+tr:nth-child(even){
+    background-color: darkgray;  /* pares */
+}

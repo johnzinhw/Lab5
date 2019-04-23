@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 0px;   /* tira os espacamento padrao da pagina, * serve para selecionar todo o codigo.*/
+}
+
+table {
+    border-collapse: collapse; /* colar as bordas*/
+    width: 90%;
+    height: 150px;
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+.bckBlue {
+    background-color: blue;
+}
+
+.bckGreen {
+    background-color: green;
+}
+
+.bckYellow {
+    background-color: yellow;
+}
+
+#header{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* .(ponto) é class
+    # é id
+*/
+
+h1{
+    text-align: center;
+}
+
+span {
+    font-style: italic;     /* deixa apenas o CSS em italic */
+}
+
+div{
+    background-color: gray;
+    border: 1px solid black;
+    width: 400px;
+    margin: 25px auto ; /* centralizar a div */
+}
+
+a, a:hover, a:visited{
+    color:green;
+}
+
+tr:hover {
+    font-size: 25px;
+    cursor: pointer;
+}

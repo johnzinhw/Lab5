@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding: 0;
+}   
+.background {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-image: url('../img/worldcup.jpg') ;
+    background-repeat: no-repeat;
+
+}
+
+table{
+    border-collapse: collapse;
+    width: 95%;
+}
+
+td{
+    border-bottom: 3px solid black;
+}
+
+tr:nth-child(odd){
+    background-color:#cccc;  /* impares */
+}
+
+tr:nth-child(even){
+    background-color:#cccc;  /* pares */
+}

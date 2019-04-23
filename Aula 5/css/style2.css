@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div.one {
+    height: 100px;
+    background-color: blue;
+}
+
+div.two {
+    height: 500px;
+    width: 200px;
+    background-color: green;
+    float: left /* ele joga a proxima imagem a direita da ultima */
+}
+
+div.three {
+    height: 500px;
+    width: 1600px;
+    background-color:red;
+}
