@@ -1,0 +1,33 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Prova 1</title>
+</head>
+<body>
+    <form>
+        <h1>Cálculo de Investimento</h1>
+
+        <label for="nMeses">Número de meses</label>
+        <input type="number" id="nMeses">
+        <span id="nMesesError"  class="error hide">*Campo Obrigatório</span>
+
+        <label for="taxaJurosMensal">Taxa de juros Mensal</label>
+        <input type="number" id="taxaJurosMensal">
+        <span id="taxaJurosMensalError" class="error hide">*Campo Obrigatório</span>
+
+        <label for="valorDepRegular">Valor do depósito regular</label>
+        <input type="number" id="valorDepRegular">
+        <span id="valorDepRegularError"class="error hide">*Campo Obrigatório</span>
+
+        <input type="button" id="btnCadastrar" value="Calcular">
+
+        <p id="resultado"></p>
+
+
+    </form>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -56,7 +56,7 @@ function resultado() {
 }
 
 function clear() {
-    var result = document.getElementById('resultado');
-    result.innerHTML = '';
+    var clear = document.getElementById('resultado');
+    clear.innerHTML = '';
     
 }
