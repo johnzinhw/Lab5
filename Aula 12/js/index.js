@@ -16,6 +16,12 @@ function addNewAluno() {
     if (isAllFieldsValid()) {
         var student = getStudentObjetct();
 
+        var index = getStudentIndexByCPF(student.cpf);
+        if (index > -1 && index !== indexEditingStudent){
+            alert('CPF Inválido! Número de CPF repetido!'); // validando cpfs
+            return;
+        }
+
         if (lineIndexToEdit === -1) {
             students.push(student);
 
