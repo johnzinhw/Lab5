@@ -1,4 +1,5 @@
 var lineIndexToEdit = -1;
+var indexEditingStudent = null;
 var inputIds = ['name', 'email', 'cpf'];
 var students = [];
 
@@ -17,10 +18,12 @@ function addNewAluno() {
 
         if (lineIndexToEdit === -1) {
             students.push(student);
+            
         } else {
             updateStudent(student);
         }
-
+        
+        saveInLocalStorage();
         clearTableData();
         populateTableData();
         clearFields();
@@ -41,14 +44,13 @@ function getStudentObjetct() {
     var inputName = document.getElementById('name');
     var inputEmail = document.getElementById('email');
     var inputCpf = document.getElementById('cpf');
-
-    var newStudent = {
+    var timestamp = (new Date()).getTime();
+    
+    return {
         name: inputName.value,
         email: inputEmail.value,
         cpf: inputCpf.value
     };
-
-    return newStudent;
 }
 
 function clearTableData() {
@@ -75,6 +77,7 @@ function populateTableData() {
 function editExistLine() {
     var tbody = getTbody();
     var tr = tbody.children[lineIndexToEdit - 1];
+    
 
     for (var i = 0; i < inputIds.length; i++) {
         var input = document.getElementById(inputIds[i]);
@@ -113,11 +116,15 @@ function editLine() {
     var td = this.parentNode;
     var tr = td.parentNode;
     lineIndexToEdit = tr.rowIndex;
-
+    
     for (var i = 0; i < inputIds.length; i++) {
         var input = document.getElementById(inputIds[i]);
         input.value = tr.children[i].innerHTML;
     }
+
+    var cpf = tr.children[2].innerHTML;
+    indexEditingStudent = getStudentIndexByCPF(cpf); //
+    
 }
 
 function removeLine() {
@@ -223,20 +230,25 @@ function checkEmptyTable() {
 function removeStudentFromArray(cpf) {
     var index = getStudentIndexByCPF(cpf);
     students.splice(index, 1); // remover um elemento do array
-    
+    saveInLocalStorage();
+
 }
 
 function updateStudent(student) {
-    var index = getStudentIndexByCPF(student.cpf);
-    var oldStudent = students[index];
+    var oldStudent= students[indexEditingStudent];
 
     oldStudent.name = student.name;
     oldStudent.email = student.email;
     oldStudent.cpf = student.cpf;
 }
 
-function getStudentIndexByCPF(cpf){
+function getStudentIndexByCPF(cpf) {
     return index = students.findIndex(function (element) {
         return element.cpf == cpf;
-    });    
+    });
+}
+
+function saveInLocalStorage() {
+    var studentsToBeSave = JSON.stringify(students);
+    localStorage.setItem('STUDENTS', studentsToBeSave);
 }
