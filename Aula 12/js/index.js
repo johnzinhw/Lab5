@@ -18,11 +18,11 @@ function addNewAluno() {
 
         if (lineIndexToEdit === -1) {
             students.push(student);
-            
+
         } else {
             updateStudent(student);
         }
-        
+
         saveInLocalStorage();
         clearTableData();
         populateTableData();
@@ -45,7 +45,7 @@ function getStudentObjetct() {
     var inputEmail = document.getElementById('email');
     var inputCpf = document.getElementById('cpf');
     var timestamp = (new Date()).getTime();
-    
+
     return {
         name: inputName.value,
         email: inputEmail.value,
@@ -77,7 +77,7 @@ function populateTableData() {
 function editExistLine() {
     var tbody = getTbody();
     var tr = tbody.children[lineIndexToEdit - 1];
-    
+
 
     for (var i = 0; i < inputIds.length; i++) {
         var input = document.getElementById(inputIds[i]);
@@ -116,7 +116,7 @@ function editLine() {
     var td = this.parentNode;
     var tr = td.parentNode;
     lineIndexToEdit = tr.rowIndex;
-    
+
     for (var i = 0; i < inputIds.length; i++) {
         var input = document.getElementById(inputIds[i]);
         input.value = tr.children[i].innerHTML;
@@ -124,7 +124,7 @@ function editLine() {
 
     var cpf = tr.children[2].innerHTML;
     indexEditingStudent = getStudentIndexByCPF(cpf); //
-    
+
 }
 
 function removeLine() {
@@ -235,7 +235,7 @@ function removeStudentFromArray(cpf) {
 }
 
 function updateStudent(student) {
-    var oldStudent= students[indexEditingStudent];
+    var oldStudent = students[indexEditingStudent];
 
     oldStudent.name = student.name;
     oldStudent.email = student.email;
@@ -251,4 +251,17 @@ function getStudentIndexByCPF(cpf) {
 function saveInLocalStorage() {
     var studentsToBeSave = JSON.stringify(students);
     localStorage.setItem('STUDENTS', studentsToBeSave);
+}
+
+window.onload = function () {
+    loadDataFromLocalStorage();
+};
+
+function loadDataFromLocalStorage() { // pega os itens da tabela ejoga na tabela.
+    var studentsStr = localStorage.getItem('STUDENTS');
+    if (studentsStr) {
+        students = JSON.parse(studentsStr);
+        clearTableData();
+        populateTableData();
+    }
 }
